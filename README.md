@@ -12,4 +12,3 @@
 | metheod | contact                                        |
 |:-------:|:----------------------------------------------:|
 | mail    | franknoh1218@gamil.com, franknoh1218@naver.com |
-| discord | franknoh#8927                                  |
