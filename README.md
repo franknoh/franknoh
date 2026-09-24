@@ -19,11 +19,10 @@
 
 ### 🛠️ Stack
 
-<img src="https://skillicons.dev/icons?i=cpp,py,ts,rust,pytorch,docker&theme=dark" alt="C++, Python, TypeScript, Rust, PyTorch, Docker" />
-
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![CUDA](https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
-![LLVM](https://img.shields.io/badge/LLVM-262D3A?style=flat-square&logo=llvm&logoColor=white)
-![JAX](https://img.shields.io/badge/JAX-0d1117?style=flat-square&logo=google&logoColor=white)
 
 ### 📈 Activity
 
