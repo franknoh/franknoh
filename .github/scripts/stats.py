@@ -16,7 +16,9 @@ OUT = Path(__file__).resolve().parents[2] / "profile"
 EXCLUDE_LANGS = {"HTML", "CSS", "Jupyter Notebook", "Makefile", "Dockerfile", "Shell", "Batchfile", "SCSS", "CMake", "PowerShell"}
 TOP_N = 6
 
-BG, BORDER, FG, MUTED, ACCENT = "#0d1117", "#30363d", "#e6edf3", "#8b949e", "#16a34a"
+BG, BORDER, FG, MUTED, ACCENT = "#0a0a0a", "#2e2e2e", "#fafafa", "#a3a3a3", "#fafafa"
+# grayscale ramp for the language bar, most used first
+SHADES = ["#fafafa", "#c4c4c4", "#949494", "#6b6b6b", "#4a4a4a", "#333333"]
 FONT = "font-family='Segoe UI, Ubuntu, Helvetica, Arial, sans-serif'"
 MONO = "font-family='SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace'"
 
@@ -96,7 +98,7 @@ def stats_svg(user, repos):
 
 
 def langs_svg(repos):
-    totals, colors = {}, {}
+    totals = {}
     for r in repos:
         for e in r["languages"]["edges"]:
             name = e["node"]["name"]
@@ -104,9 +106,9 @@ def langs_svg(repos):
                 continue
             # sqrt keeps one huge vendored repo from drowning out the rest
             totals[name] = totals.get(name, 0) + math.sqrt(e["size"])
-            colors[name] = e["node"]["color"] or MUTED
     top = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)[:TOP_N]
     total = sum(v for _, v in top) or 1
+    colors = {name: SHADES[i] for i, (name, _) in enumerate(top)}
 
     bar, x = "", 24.0
     bar += "<clipPath id='bar'><rect x='24' y='54' width='302' height='8' rx='4'/></clipPath><g clip-path='url(#bar)'>"
